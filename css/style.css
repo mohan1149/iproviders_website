@@ -194,7 +194,7 @@ ul.navbar-nav.ml-lg-auto.text-center {
 }
 
 .banner-text {
-	padding: 21vw 0 10vw;
+	padding: 45vw 0 10vw;
 	box-sizing: border-box;
 }
 
@@ -1509,5 +1509,5 @@ span.icon_g_plus {
 /* -- //Responsive code -- */
 
 .timeline .description{
-	font-size: 1.5rem !important;
+	font-size: 1rem !important;
 }
