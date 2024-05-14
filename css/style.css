@@ -14,14 +14,18 @@ body a,
 	text-decoration: none;
 	outline: none;
 }
+.login-btn{
+	display: flex;
+	justify-content: center;
+}
 p,
 a,
-span,
 h1,
 h2,
 h3,
 h4,
 h5,
+nav,
 h6 {
 	margin: 0;
 	font-family: "Noto Kufi Arabic", sans-serif;
@@ -92,13 +96,13 @@ footer h2 {
 
 .navbar-light {
 	padding: 0.4em 5em;
-	position: absolute;
+	/* position: fixed; */
 	z-index: 999;
-	width: 80%;
-	left: 10%;
-	top: 4%;
+	width: 100%;
+	/* left: 10%; */
+	/* top: 4%; */
 	background: #0093d0;
-	border-radius: 70px;
+	border-radius: 0px;
 }
 
 a.navbar-brand {
@@ -144,6 +148,9 @@ ul.navbar-nav.ml-lg-auto.text-center {
 
 .dropdown-item {
 	color: #fff;
+}
+.right{
+	float: right !important;
 }
 
 .dropdown-item,
@@ -1113,7 +1120,6 @@ ul.v4-content li {
 
 ul.v4-content li a {
 	color: #fff;
-	text-transform: capitalize;
 	font-size: 1em;
 }
 
@@ -1260,7 +1266,7 @@ span.icon_g_plus {
 @media screen and (max-width: 991px) {
 	.navbar-light {
 		padding: 1em 2em;
-		border-radius: 10px;
+		border-radius: 0px;
 	}
 
 	.timer {
