@@ -5,6 +5,7 @@ $(document).ready(function () {
         $('#invoicesLink').removeClass('hidden');
         $('#loginButton').addClass('hidden');
         $('#logoutButton').removeClass('hidden');
+        $('#invoices').removeClass('hidden');
         loadRepayments();
     }
     $('#logoutButton').on('click', () => {
