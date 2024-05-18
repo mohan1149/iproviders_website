@@ -41,10 +41,10 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary">
                 <h3>
                     <a class="navbar-brand text-white" href="index.html">
-                        <span>IPROVIDERS</span>
-                        </a>
-
-                    </h3>
+                        <!-- <span>IPROVIDERS</span> -->
+                        <img src="images/llogo.jpeg" alt="" style="width: 100px;border-radius: 5px;">
+                    </a>
+                </h3>
                 </h1>
                 <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -76,9 +76,19 @@
                         <li class="nav-item mr-lg-3 mt-lg-0 mt-3">
                             <a class="nav-link scroll" href="#contact">تواصل معنا</a>
                         </li>
-                        <li class="login-btn">
-                            <button type="button" class="btn ml-lg-2 in-btn d-flex align-items" data-toggle="modal" aria-pressed="false"
-                                data-target="#exampleModal">
+                        <li class="nav-item mr-lg-3 mt-lg-0 mt-3 hidden" id="invoicesLink">
+                            <a class="nav-link scroll" href="#invoices">Invoices</a>
+                        </li>
+                        <li class="logout-btn hidden" id="logoutButton">
+                            <button type="button" class="btn ml-lg-2 in-btn d-flex align-items">
+                                <span style="margin-top: -2px;">Logout</span>
+                            </button>
+                        </li>
+
+
+                        <li class="login-btn" id="loginButton">
+                            <button type="button" class="btn ml-lg-2 in-btn d-flex align-items" data-toggle="modal"
+                                aria-pressed="false" data-target="#loginModal">
                                 <i class="far fa-user-circle"></i><span>Login</span>
                             </button>
                         </li>
@@ -170,10 +180,6 @@
             </div>
         </div>
     </div>
-
-
-
-
     <!-- //about -->
     <!-- stats -->
     <section class="insurance_stats py-sm-5" id="more">
@@ -404,17 +410,35 @@
     </div> -->
     <!-- //testimonials -->
     <!-- contact -->
+    <section id="invoices" class="bg-light p-4">
+        <h5 class="text-center">Invoices</h5>
+        <table class="table responsive">
+            <thead>
+                <!-- <th>ID</th> -->
+                <th>Amount</th>
+                <th>Fine</th>
+                <th>Total</th>
+                <th>Due Date</th>
+                <th>Pay</th>
+            </thead>
+            <tbody id="invoicesTable">
+
+            </tbody>
+        </table>
+    </section>
+
     <div class="contact-insure" id="contact">
         <div class="container py-sm-5">
             <div class="title-section py-4">
                 <h3 class="main-title-insurance">تواصل معنا</h3>
-                <h5 class="text-center">                        شركة أي بروفيدرز ، القبلة- شارع محمد ثنيان الغانم - مجمع جمال المطوع _ الدور الأول- مكتب رقم ٧.
+                <h5 class="text-center"> شركة أي بروفيدرز ، القبلة- شارع محمد ثنيان الغانم - مجمع جمال المطوع _ الدور
+                    الأول- مكتب رقم ٧.
                 </h5>
                 <!-- <span class="title-line">
                 </span> -->
             </div>
             <!-- <div class="row py-lg-5 py-4"> -->
-                <!-- <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
                     <div class="insurance-contact-top">
                         <h4>get in touch </h4>
                         <p>1234k Avenue,Block-4,New York City.</p>
@@ -427,16 +451,16 @@
                     <div class="d-sm-flex">
                         <a class="btn btn-primary mt-4 insurance-link-bnr scroll" href="#footer" role="button">subscribe
                         </a>
-                        <a href="#" role="button" data-toggle="modal" data-target="#exampleModal1"
+                        <a href="#" role="button" data-toggle="modal" data-target="#loginModal1"
                             class="btn btn-primary mt-4 ml-3 insurance-link-bnr scroll text-white">
                             Register Now</a>
                     </div>
 
                 </div> -->
-                <!-- <div class="offset-2"></div> -->
-                <!-- <div class="col-lg-6 mt-lg-0 mt-5"> -->
-                    <!-- register form grid -->
-                    <!-- <div class="register-top1">
+            <!-- <div class="offset-2"></div> -->
+            <!-- <div class="col-lg-6 mt-lg-0 mt-5"> -->
+            <!-- register form grid -->
+            <!-- <div class="register-top1">
                         <form action="#" method="get" class="register-insure">
                             <div class="form-group">
                                 <div class="row">
@@ -492,8 +516,8 @@
                             </div>
                         </form>
                     </div> -->
-                    <!--  //register form grid ends here -->
-                <!-- </div> -->
+            <!--  //register form grid ends here -->
+            <!-- </div> -->
             <!-- </div> -->
         </div>
     </div>
@@ -586,7 +610,7 @@
                             <li>
                                 <a href="mailto:info@iproviderskw.com" class="scroll">info@iproviderskw.com</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -599,7 +623,7 @@
         <p>© 2024 IProviders. All rights reserved.</p>
     </div>
     <!-- login  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -608,24 +632,26 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="d-flex justify-content-space-between">
-                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                      
+                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+
                     </div>
                 </div>
                 <div class="modal-body">
                     <form action="#" method="post" class="p-3">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Username</label>
-                            <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name"
+                            <label for="civil" class="col-form-label">Civil ID</label>
+                            <input type="text" class="form-control" placeholder="Civil ID" name="civil" id="civil"
                                 required="">
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Password" id="password"
-                                required="">
+                            <label for="mobile" class="col-form-label">Mobile Number</label>
+                            <input type="text" class="form-control" placeholder="Mobile Number" name="mobile"
+                                id="mobile" required="">
                         </div>
                         <div class="right-insl">
-                            <input type="submit" class="form-control" value="Login">
+                            <input class="form-control" value="Login" type="button" id="loginFormButton"
+                                class="btn ml-lg-2 in-btn d-flex align-items" data-toggle="modal" aria-pressed="false"
+                                data-target="#activityModal">
                         </div>
                         <div class="row sub-insl my-3">
                             <!-- <div class="col sub-insurance">
@@ -638,7 +664,7 @@
                             </div> -->
                         </div>
                         <!-- <p class="text-center dont-do text-white">Don't have an account?
-                            <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-white">
+                            <a href="#" data-toggle="modal" data-target="#loginModal1" class="text-white">
                                 Register Now</a>
 
                         </p> -->
@@ -647,14 +673,27 @@
             </div>
         </div>
     </div>
+
+    <!-- activity indicator -->
+    <div class="modal fade" id="activityModal">
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+            <div class="d-flex justify-content-space-center">
+                <img src="images/loading.gif" alt="" width="100px">
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- //login -->
     <!-- register -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+    <div class="modal fade" id="loginModal1" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel1"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Register</h5>
+                    <h5 class="modal-title" id="loginModalLabel1">Register</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -781,6 +820,7 @@
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
+    <script src="js/master.js"></script>
 </body>
 
 </html>
